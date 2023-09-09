@@ -1,10 +1,13 @@
 import Image from 'next/image';
 import Nav from './components/Nav';
+import Hero from './components/Hero';
+import CaseStudyList from './components/CaseStudyList';
 
 export default function Home() {
   return (
-    <main className='flex min-h-screen flex-col items-center justify-between'>
-      <Nav />
+    <main className=''>
+      <Hero />
+      <CaseStudyList />
     </main>
   );
 }
