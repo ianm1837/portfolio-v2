@@ -1,6 +1,6 @@
 import './globals.css';
 import { Inter } from 'next/font/google';
-import Nav from './components/Nav';
+// import Nav from './components/Nav';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -11,12 +11,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="">
+    <html lang="en" className="overflow-x-hidden">
       <body className={inter.className}>
-        <div className="container m-auto">
-          <Nav />
           {children}
-        </div>
+
       </body>
     </html>
   );
