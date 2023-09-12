@@ -1,18 +1,18 @@
-import React from 'react';
-import CaseStudyItem from './CaseStudyItem';
-import spectral from '../images/Spectral.png';
-import piholePause from '../images/pihole-pause.png';
-import genuineJesse from '../images/genuine-jesse.png';
-import overdrive from '../images/overdrive.png';
+import React from "react";
+import CaseStudyItem from "./CaseStudyItem";
+import spectral from "../images/cards/Spectral Card.png";
+import piholePause from "../images/cards/Pihole Pause Card.png";
+import genuineJesse from "../images/cards/GJ Card.png";
+import overdrive from "../images/cards/Overdrive Card.png";
 
 export default function CaseStudyList() {
   return (
-    <div className="mt-24 w-100">
-      <div className='w-11/12 m-auto'>
-        <h1 className='m-3 text-2xl font-semibold'>Work</h1>
+    <div className="container m-auto mt-24">
+      <div className="m-auto w-11/12 sm:w-10/12">
+        <h1 className="m-3 text-2xl font-semibold">Work</h1>
       </div>
 
-      <div className="flex flex-wrap w-11/12 mx-auto ">
+      <div className="mx-auto flex w-11/12 flex-wrap sm:w-10/12 ">
         <CaseStudyItem
           image={spectral}
           title="Spectral"

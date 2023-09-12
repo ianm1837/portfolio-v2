@@ -18,6 +18,13 @@
     "tailwindcss": "3.3.3"
   },
   "devDependencies": {
-    "daisyui": "^3.7.3"
+    "daisyui": "^3.7.3",
+    "prettier": "^3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.4"
+  },
+  "prettier": {
+    "plugins": [
+      "prettier-plugin-tailwindcss"
+    ]
   }
 }

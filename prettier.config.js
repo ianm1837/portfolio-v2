@@ -1,6 +1,5 @@
-const config = {
+module.exports = {
   tabWidth: 2,
   singleQuote: true,
-}
-
-module.exports = config
+  plugins: ['prettier-plugin-tailwindcss'],
+};
