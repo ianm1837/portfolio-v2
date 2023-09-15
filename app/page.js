@@ -6,6 +6,7 @@ import CaseStudyList from "./components/CaseStudyList";
 import ContactForm from "./components/ContactForm";
 import WaveBanner from "./components/WaveBanner";
 
+
 export default function Home() {
   return (
     <main className="overflow-x-hidden">
@@ -15,8 +16,10 @@ export default function Home() {
       <WaveBanner />
       <div className="container m-auto w-screen">
         <CaseStudyList />
-        <ContactForm />
+        {/* <ContactForm /> */}
+        
       </div>
+      <WaveBanner direction/>
     </main>
   );
 }

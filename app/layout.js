@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Nav from "./components/Nav";
+import Footer from './components/Footer'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,11 +12,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="w-screen overflow-x-hidden">
+    <html lang="en" className="w-screen overflow-x-hidden scroll-smooth">
       <body className={inter.className}>
         <Nav />
 
         {children}
+        <Footer />
       </body>
     </html>
   );
