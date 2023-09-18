@@ -1,9 +1,10 @@
 "use client";
 import React from "react";
 import Image, { StaticImageData } from "next/image";
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import TransparentBackdrop from "./images/Transparent Backdrop.png";
+import ArrowBackward from "../../components/icons/ArrowBackward";
+import ArrowForward from "../../components/icons/ArrowForward";
 
 type ImageArray = {
   id: number,
@@ -76,12 +77,6 @@ export default function CaseStudyCarousel({ showcaseImages } : { showcaseImages:
     setCurrentImageIndex(nextElement);
   }
 
-  useEffect(() => {
-    async function onMount() {
-    }
-    onMount();
-  }, []);
-
   return (
     <>
       <div>
@@ -89,15 +84,7 @@ export default function CaseStudyCarousel({ showcaseImages } : { showcaseImages:
           <div className="absolute z-10 flex h-full w-full justify-between">
             <button className=" h-full w-6/12" onClick={() => incrementInt(-1)}>
               <span className={`btn btn-circle my-auto ml-3 mr-auto flex`}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M19 11H7.83l4.88-4.88c.39-.39.39-1.03 0-1.42a.996.996 0 0 0-1.41 0l-6.59 6.59a.996.996 0 0 0 0 1.41l6.59 6.59a.996.996 0 1 0 1.41-1.41L7.83 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" />
-                </svg>
+                <ArrowBackward />
               </span>
             </button>
             <button
@@ -105,15 +92,7 @@ export default function CaseStudyCarousel({ showcaseImages } : { showcaseImages:
               onClick={() => incrementInt(1)}
             >
               <span className={`btn btn-circle my-auto ml-auto mr-3`}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42.39.39 1.02.39 1.41 0l6.59-6.59a.996.996 0 0 0 0-1.41l-6.58-6.6a.996.996 0 1 0-1.41 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z" />
-                </svg>
+                <ArrowForward />
               </span>
             </button>
           </div>
@@ -124,10 +103,10 @@ export default function CaseStudyCarousel({ showcaseImages } : { showcaseImages:
               alt="placeholder image"
               className=""
             />
-            {imageElements ? imageElements : ""} 
+            {imageElements} 
           </div>
         </div>
-        {captionElements ? captionElements[currentImageIndex] : ""}
+        {captionElements[currentImageIndex]}
       </div>
       <div className="mt-1"></div>
       <div className="w-100 preview z-40 flex items-center justify-center gap-4 p-3">
