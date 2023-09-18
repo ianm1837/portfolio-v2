@@ -15,12 +15,16 @@
     "postcss": "8.4.29",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "sharp": "^0.32.5",
     "tailwindcss": "3.3.3"
   },
   "devDependencies": {
+    "@types/node": "20.6.2",
+    "@types/react": "18.2.22",
     "daisyui": "^3.7.3",
     "prettier": "^3.0.3",
-    "prettier-plugin-tailwindcss": "^0.5.4"
+    "prettier-plugin-tailwindcss": "^0.5.4",
+    "typescript": "5.2.2"
   },
   "prettier": {
     "plugins": [

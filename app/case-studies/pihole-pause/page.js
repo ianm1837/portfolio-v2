@@ -3,10 +3,10 @@ import React from 'react'
 export default function page() {
   return (
     <div>
-      <CaseStudyCarousel></CaseStudyCarousel>
+      {/* <CaseStudyCarousel></CaseStudyCarousel>
       <CaseStudyDescription />
       <CaseStudyTLDR />
-      <CaseStudyLinks />
+      <CaseStudyLinks /> */}
     </div>
   );
 }

@@ -12,11 +12,14 @@ export default function CaseStudyCarousel({ showcaseImages }) {
     <input
       type="radio"
       name={`imageSelect`}
-      id={`radio${index + 1}`}
-      key={`radio${index + 1}`}
-      value={index + 1}
-      checked={currentRadioElement == index + 1}
-      onChange={handleRadioSelect}
+      id={`radio${index}`}
+      key={`radio${radio.id}`}
+      value={index}
+      checked={currentRadioElement == index}
+      onChange={(e) => {
+        console.log("onchange called");
+        handleRadioSelect(e);
+      }}
       className="radio radio-sm "
     />
   ));
@@ -54,61 +57,99 @@ export default function CaseStudyCarousel({ showcaseImages }) {
     captionElements[0],
   );
 
-  function increment(direction) {
-    console.log("direction: ", direction);
-    if (direction == "up") {
-      if (currentImageIndex == showcaseImages.length - 1) {
-        const nextElement = 0;
+  function incrementInt(direction) {
+    let nextElement = (currentImageIndex + direction) % showcaseImages.length;
+    if (nextElement < 0) nextElement = showcaseImages.length - 1;
 
-        setCurrentImageIndex(nextElement);
-        setCurrentImageElement(imageElements[nextElement]);
-        setCurrentCaptionElement(captionElements[nextElement]);
-        setCurrentRadioElement(nextElement + 1);
-        return;
-      }
-      const nextElement = currentImageIndex + 1;
-      setCurrentImageIndex(nextElement);
-      setCurrentImageElement(imageElements[nextElement]);
-      setCurrentCaptionElement(captionElements[nextElement]);
-      setCurrentRadioElement(nextElement + 1);
-    }
-
-    if (direction == "down") {
-      if (currentImageIndex == 0) {
-        const nextElement = imageElements.length - 1;
-
-        setCurrentImageIndex(nextElement);
-        setCurrentImageElement(imageElements[nextElement]);
-        setCurrentCaptionElement(captionElements[nextElement]);
-        setCurrentRadioElement(nextElement + 1);
-        return;
-      }
-      const nextElement = currentImageIndex - 1;
-
-      setCurrentImageIndex(nextElement);
-      setCurrentImageElement(imageElements[nextElement]);
-      setCurrentCaptionElement(captionElements[nextElement]);
-      setCurrentRadioElement(nextElement + 1);
-    }
+    setCurrentImageIndex(nextElement);
+    setCurrentCaptionElement(captionElements[nextElement]);
+    setCurrentRadioElement(nextElement);
   }
 
-  function handleRadioSelect(event) {
-    const nextElement = event.target.id[event.target.id.length - 1] - 1;
+  // function increment(direction) {
+  //   if (direction == "up") {
+  //     console.log("up called", currentImageIndex);
+  //     console.log("showcaseImages.length", showcaseImages.length);
 
-    console.log("nextElement: ", nextElement);
+  //     if (currentImageIndex == showcaseImages.length - 1) {
+  //       const nextElement = 0;
+
+  //       console.log("up reset called", nextElement);
+  //       setCurrentImageIndex(nextElement);
+  //       setCurrentImageElement(imageElements[nextElement]);
+  //       setCurrentCaptionElement(captionElements[nextElement]);
+  //       setCurrentRadioElement(nextElement + 1);
+  //       return;
+  //     }
+  //     const nextElement = currentImageIndex + 1;
+  //     console.log("up next called", nextElement);
+
+  //     setCurrentImageIndex(nextElement);
+  //     setCurrentImageElement(imageElements[nextElement]);
+  //     setCurrentCaptionElement(captionElements[nextElement]);
+  //     setCurrentRadioElement(nextElement + 1);
+  //   }
+
+  //   if (direction == "down") {
+  //     console.log("down called", currentImageIndex);
+
+  //     if (currentImageIndex == 0) {
+  //       const nextElement = imageElements.length - 1;
+  //       console.log("down reset called", nextElement);
+
+  //       setCurrentImageIndex(nextElement);
+  //       setCurrentImageElement(imageElements[nextElement]);
+  //       setCurrentCaptionElement(captionElements[nextElement]);
+  //       setCurrentRadioElement(nextElement + 1);
+  //       return;
+  //     }
+  //     const nextElement = currentImageIndex - 1;
+  //     console.log("down next called", nextElement);
+
+  //     setCurrentImageIndex(nextElement);
+  //     setCurrentImageElement(imageElements[nextElement]);
+  //     setCurrentCaptionElement(captionElements[nextElement]);
+  //     setCurrentRadioElement(nextElement + 1);
+  //   }
+  // }
+
+  function handleRadioSelect(event) {
+    // Get numberic id from element id
+    const nextElement = event.target.id[event.target.id.length - 1];
+    console.log("nextElement", nextElement);
+    console.log(event.target.id);
+
+    console.log("handleRadioSelect clicked");
 
     setCurrentImageIndex(nextElement);
     setCurrentImageElement(imageElements[nextElement]);
     setCurrentCaptionElement(captionElements[nextElement]);
-    setCurrentRadioElement(nextElement + 1);
+    setCurrentRadioElement(nextElement);
   }
 
   useEffect(() => {
     async function onMount() {
-      setCurrentRadioElement(1);
+      console.log("onMount called");
+
+      setCurrentRadioElement(0);
     }
     onMount();
   }, []);
+
+  // useEffect(() => {
+  //   async function onMount() {
+  //     console.log("currentCaptionElement: ", currentCaptionElement);
+  //     console.log("currentImageElement: ", currentImageElement);
+  //     console.log("currentImageIndex: ", currentImageIndex);
+  //     console.log("currentRadioElement: ", currentRadioElement);
+  //   }
+  //   onMount();
+  // }, [
+  //   currentCaptionElement,
+  //   currentImageElement,
+  //   currentImageIndex,
+  //   currentRadioElement,
+  // ]);
 
   return (
     <>
@@ -117,7 +158,8 @@ export default function CaseStudyCarousel({ showcaseImages }) {
           <div className="absolute z-10 flex h-full w-full justify-between">
             <button
               className=" h-full w-6/12"
-              onClick={() => increment("down")}
+              onClick={() => incrementInt(-1)}
+              // onClick={() => increment("down")}
             >
               <span className={`btn btn-circle my-auto ml-3 mr-auto flex`}>
                 <svg
@@ -133,7 +175,8 @@ export default function CaseStudyCarousel({ showcaseImages }) {
             </button>
             <button
               className="justify flex h-full w-6/12 "
-              onClick={() => increment("up")}
+              onClick={() => incrementInt(1)}
+              // onClick={() => increment("up")}
             >
               <span className={`btn btn-circle my-auto ml-auto mr-3`}>
                 <svg
@@ -155,10 +198,11 @@ export default function CaseStudyCarousel({ showcaseImages }) {
               alt="placeholder image"
               className=""
             />
-            {currentImageElement ? currentImageElement : ""}
+            {imageElements ? imageElements[currentImageIndex] : ""}
           </AnimatePresence>
         </div>
-        {currentCaptionElement ? currentCaptionElement : ""}
+        {/* TODO: remove currentCaption element  */}
+        {radioElements ? currentCaptionElement : ""}
       </div>
       <div className="mt-1"></div>
       <div className="w-100 preview z-40 flex items-center justify-center gap-4 p-3">
