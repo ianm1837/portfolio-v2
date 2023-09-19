@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import lineWave from "../images/line-wave.svg";
 import Image from "next/image";
 
-export default function WaveBanner({ direction }) {
+export default function WaveBanner({ direction } : { direction? : boolean } ) {
 
   const forward = [0, -800]
   const reverse = [-800, 0]
@@ -25,50 +25,50 @@ export default function WaveBanner({ direction }) {
     >
       <Image
         src={lineWave}
-        width={"800px"}
-        height={"10px"}
+        width={800}
+        height={10}
         alt=""
         className="m-0 w-[200px] md:w-[800px]"
       />
       <Image
         src={lineWave}
-        width={"800px"}
-        height={"10px"}
+        width={800}
+        height={10}
         alt=""
         className="w-[200px] md:w-[800px]"
       />
       <Image
         src={lineWave}
-        width={"800px"}
-        height={"10px"}
+        width={800}
+        height={10}
         alt=""
         className="w-[200px] md:w-[800px]"
       />
       <Image
         src={lineWave}
-        width={"800px"}
-        height={"10px"}
+        width={800}
+        height={10}
         alt=""
         className="w-[200px] md:w-[800px]"
       />
       <Image
         src={lineWave}
-        width={"800px"}
-        height={"10px"}
+        width={800}
+        height={10}
         alt=""
         className="w-[200px] md:w-[800px]"
       />
       <Image
         src={lineWave}
-        width={"800px"}
-        height={"10px"}
+        width={800}
+        height={10}
         alt=""
         className="w-[200px] md:w-[800px]"
       />
       <Image
         src={lineWave}
-        width={"800px"}
-        height={"10px"}
+        width={800}
+        height={10}
         alt=""
         className="w-[200px] md:w-[800px]"
       />

@@ -1,8 +1,18 @@
 import React from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import ArrowForward from "./icons/ArrowForward";
 
-export default function CaseStudyItem({ image, alt, title, caption }) {
+export default function CaseStudyItem({
+  image,
+  alt,
+  title,
+  caption,
+}: {
+  image: StaticImageData;
+  alt: string;
+  title: string;
+  caption: string;
+}) {
   return (
     <div className=" w-full lg:w-6/12 ">
       <div className="card m-3 bg-neutral text-neutral-content">

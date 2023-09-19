@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import profile from "../../images/profile.png";
 
-export default function ProfileImage({ className }) {
+export default function ProfileImage({ className } : { className? : string }) {
   return (
     <Image
       src={profile}
