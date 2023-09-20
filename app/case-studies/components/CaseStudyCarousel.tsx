@@ -1,6 +1,6 @@
 "use client";
 import Image, { StaticImageData } from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ArrowBackward from "../../components/icons/ArrowBackward";
 import ArrowForward from "../../components/icons/ArrowForward";
 import TransparentBackdrop from "./images/Transparent Backdrop.png";
@@ -18,6 +18,7 @@ export default function CaseStudyCarousel({
 }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [loadComplete, setLoadComplete] = useState(0);
+  const [imageCount, setImageCount] = useState(true);
 
   const radioElements = showcaseImages.map((radio, index) => (
     <button
@@ -84,32 +85,41 @@ export default function CaseStudyCarousel({
     setCurrentImageIndex(nextElement);
   }
 
+  useEffect(() => {
+    //only render radio and arrow buttons if true
+    showcaseImages.length == 1 ? setImageCount(false) : setImageCount(true);
+  }, [showcaseImages.length]);
+
   return (
     <>
-      <div className="w-full m-auto ">
-        <div className="relative flex w-full h-full items-center">
-          <div className="absolute z-10 flex h-full w-full justify-between">
-            <button
-              className={`opacity-0 transition-opacity ${
-                loadComplete ? "opacity-100" : ""
-              } h-full w-6/12`}
-              onClick={() => incrementInt(-1)}
-            >
-              <span className={`btn btn-circle my-auto ml-3 mr-auto flex`}>
-                <ArrowBackward />
-              </span>
-            </button>
-            <button
-              className={`flex h-full w-6/12 opacity-0 transition-opacity ${
-                loadComplete ? "opacity-100" : ""
-              }`}
-              onClick={() => incrementInt(1)}
-            >
-              <span className={`btn btn-circle my-auto ml-auto mr-3`}>
-                <ArrowForward />
-              </span>
-            </button>
-          </div>
+      <div className="m-auto w-full ">
+        <div className="relative flex h-full w-full items-center">
+          {imageCount ? (
+            <div className="absolute z-10 flex h-full w-full justify-between">
+              <button
+                className={`opacity-0 transition-opacity ${
+                  loadComplete ? "opacity-100" : ""
+                } h-full w-6/12`}
+                onClick={() => incrementInt(-1)}
+              >
+                <span className={`btn btn-circle my-auto ml-3 mr-auto flex`}>
+                  <ArrowBackward />
+                </span>
+              </button>
+              <button
+                className={`flex h-full w-6/12 opacity-0 transition-opacity ${
+                  loadComplete ? "opacity-100" : ""
+                }`}
+                onClick={() => incrementInt(1)}
+              >
+                <span className={`btn btn-circle my-auto ml-auto mr-3`}>
+                  <ArrowForward />
+                </span>
+              </button>
+            </div>
+          ) : (
+            ""
+          )}
           <div className="relative inset-0 flex h-full w-full">
             <Image
               src={TransparentBackdrop}
@@ -131,7 +141,7 @@ export default function CaseStudyCarousel({
         {captionElements[currentImageIndex]}
         <div className="mt-1"></div>
         <div className="w-100 preview z-40 flex items-center justify-center gap-4 p-3">
-          {radioElements}
+          {imageCount ? radioElements : ""}
         </div>
       </div>
     </>

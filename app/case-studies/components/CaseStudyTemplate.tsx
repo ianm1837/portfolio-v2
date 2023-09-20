@@ -25,7 +25,7 @@ export default function CaseStudyTemplate({
   return (
     <CaseStudyPageWrapper>
       <CaseStudyCarousel showcaseImages={showcaseImages} />
-      <article className="prose max-w-none">
+      <article className="prose max-w-none whitespace-pre-line">
         <CaseStudyHeader header={header} />
         <div className="flex">
           <CaseStudyDescription description={description} />
