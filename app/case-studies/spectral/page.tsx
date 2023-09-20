@@ -1,10 +1,4 @@
-import CaseStudyCarousel from "../components/CaseStudyCarousel";
-import CaseStudyDescription from "../components/CaseStudyDescription";
-import CaseStudyHeader from "../components/CaseStudyHeader";
-import CaseStudyLinks from "../components/CaseStudyLinks";
-import CaseStudyPageWrapper from "../components/CaseStudyPageWrapper";
-import CaseStudyTLDR from "../components/CaseStudyTLDR";
-import CaseStudyTechUsed from "../components/CaseStudyTechUsed";
+import CaseStudyTemplate from "../components/CaseStudyTemplate";
 import SpectralShowCase from "./images/Spectral Showcase.png";
 import SpectralWireframe1 from "./images/Wireframe-1.png";
 import SpectralWireframe2 from "./images/Wireframe-2.png";
@@ -33,6 +27,11 @@ const showcaseImages = [
   },
 ];
 
+const header = "Spectral";
+
+const descriptionText =
+  "Spectral is a real-time messaging client app I conceived, designed, and developed independently. Its aim is to provide secure and private messaging while offering flexibility in hosting choices. My longstanding passion for security and privacy, particularly in communication, fueled this project. When I needed a project for my final grade at the University of Oregon Full Stack Coding Bootcamp, Spectral emerged as the ideal culmination of my studies and passions.";
+
 const tldr = [
   "Last project for Coding Bootcamp",
   "I made a self hosted real time communication chat app",
@@ -52,23 +51,15 @@ const links = [
   },
 ];
 
-const descriptionText =
-  "Spectral is a real-time messaging client app I conceived, designed, and developed independently. Its aim is to provide secure and private messaging while offering flexibility in hosting choices. My longstanding passion for security and privacy, particularly in communication, fueled this project. When I needed a project for my final grade at the University of Oregon Full Stack Coding Bootcamp, Spectral emerged as the ideal culmination of my studies and passions.";
-
 export default function page() {
   return (
-    <CaseStudyPageWrapper>
-      <CaseStudyCarousel showcaseImages={showcaseImages} />
-      <article className="prose max-w-none">
-        <CaseStudyHeader header="Spectral" />
-        <div className="flex">
-          <CaseStudyDescription description={descriptionText} />
-          <CaseStudyTLDR tldr={tldr} />
-        </div>
-        <CaseStudyTechUsed tech={techUsed} />
-        <CaseStudyLinks links={links} />
-        <div className="h-20"></div>
-      </article>
-    </CaseStudyPageWrapper>
+    <CaseStudyTemplate
+      showcaseImages={showcaseImages}
+      header={header}
+      description={descriptionText}
+      tldr={tldr}
+      techUsed={techUsed}
+      links={links}
+    />
   );
 }

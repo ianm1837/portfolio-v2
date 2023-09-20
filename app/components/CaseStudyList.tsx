@@ -25,21 +25,21 @@ export default function CaseStudyList() {
           title="Pi-hole Pause"
           caption="For when you have redundant pi-holes and don't have time to troubleshoot."
           alt="showing desktop application version of pihole pause"
-          link="/case-studies/"
+          link="/case-studies/pihole-pause"
         />
         <CaseStudyItem
           image={genuineJesse}
           title="Genuine Jesse"
           caption="A portfolio for an incredibly talented Product Designer"
           alt="image of portfolio site"
-          link="/case-studies/"
+          link="/case-studies/genuinejesse"
         />
         <CaseStudyItem
           image={overdrive}
           title="Overdrive"
           caption="To keep me from breaking my car. "
           alt="Circuit diagram"
-          link="/case-studies/"
+          link="/case-studies/overdrive"
         />
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-type LinksArray = {
+export type LinksArray = {
   title: string;
   href: string;
 };

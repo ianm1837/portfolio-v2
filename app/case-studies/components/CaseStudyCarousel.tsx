@@ -5,7 +5,7 @@ import ArrowBackward from "../../components/icons/ArrowBackward";
 import ArrowForward from "../../components/icons/ArrowForward";
 import TransparentBackdrop from "./images/Transparent Backdrop.png";
 
-type ImageArray = {
+export type ImageArray = {
   id: number;
   image: StaticImageData;
   caption: string;
