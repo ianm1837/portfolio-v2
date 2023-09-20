@@ -1,12 +1,17 @@
 {
   "compilerOptions": {
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    },
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
     "allowJs": true,
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "skipLibCheck": true,
     "strict": false,
     "noEmit": true,
@@ -21,14 +26,19 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "strictNullChecks": true
   },
   "include": [
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "next.config.js"  ],
+    "**/*.tsx",
+    "next.config.js",
+    "tailwind.config.js",
+    "postcss.config.js",
+    "prettier.config.js"
+  ],
   "exclude": [
     "node_modules"
   ]

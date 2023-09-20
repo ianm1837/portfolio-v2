@@ -1,20 +1,17 @@
 "use client";
-import React from "react";
 import { motion } from "framer-motion";
-import brandIcon from "../images/brand.svg";
-import Image from "next/image";
+import Link from "next/link";
 
 const hoverVariant = {};
 
 export default function Nav() {
   return (
-    <div className="w-6/10 navbar sticky top-0 z-30 m-auto bg-base-100 flex justify-center">
+    <div className="w-6/10 navbar sticky top-0 z-30 m-auto flex justify-center bg-base-100">
       <div className="w-11/12 sm:w-9/12">
         <div className="flex-1 ">
-          <a className="btn btn-ghost text-xl normal-case">Ian Meyer</a>
-          {/* <a className="btn btn-ghost normal-case text-xl">
-          <Image src={brandIcon} height={33}></Image>
-        </a> */}
+          <Link className="btn btn-ghost text-xl normal-case" href="/">
+            Ian Meyer
+          </Link>
         </div>
         <motion.div
           whileHover={{

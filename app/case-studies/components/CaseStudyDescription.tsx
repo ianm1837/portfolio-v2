@@ -6,9 +6,9 @@ export default function CaseStudyDescription({
   description: string;
 }) {
   return (
-    <>
-      <h1 className="text-2xl font-bold text-warning">Description</h1>
+    <div className="w-8/12 pr-4">
+      <h2 className="mt-0">Description</h2>
       <div>{description}</div>
-    </>
+    </div>
   );
 }

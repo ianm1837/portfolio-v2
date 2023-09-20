@@ -1,12 +1,7 @@
-import React from "react";
+import { IBM_Plex_Mono as Mono } from "next/font/google";
 import Image from "next/image";
 import profile from "../images/profile.png";
 import profileSpinner from "../images/portrait-spinner.svg";
-import { IBM_Plex_Mono as Mono } from "next/font/google";
-import { motion } from "framer-motion";
-import SpinningRingAnimation from "./animations/SpinningRingAnimation";
-import ProfileImage from "../images/components/ProfileImage";
-import SpinningRingImage from "../images/components/SpinningRingImage";
 
 const mono = Mono({
   weight: "400",
@@ -18,11 +13,16 @@ export default function Hero() {
     <div className=" flex w-11/12 flex-col items-center justify-center pt-10 sm:w-10/12 sm:pt-20 xl:flex-row">
       <div className="max-w-screen-sm">
         <div className="grid grid-cols-2 grid-rows-2">
-          <SpinningRingAnimation className="relative bottom-[-5.5%] left-[-2.5%] z-[2] col-[1/3] row-[1/3] flex  items-center justify-center">
-            <SpinningRingImage className="w-[75%]" />
-          </SpinningRingAnimation>
+          <div className="animate-spin-slow relative bottom-[-5.5%] left-[-2.5%] z-[2] col-[1/3] row-[1/3] flex  items-center justify-center">
+            <Image src={profileSpinner} alt="" className="w-[75%]" />
+          </div>
           <div className="z-[3] col-[1/3] row-[1/3]">
-            <ProfileImage />
+            <Image
+              src={profile}
+              quality={100}
+              priority={true}
+              alt="Picture of the author"
+            />
           </div>
         </div>
       </div>
@@ -32,7 +32,7 @@ export default function Hero() {
           Full Stack Web Developer
         </h3>
         <br />
-        I'm a guy with an insatiable drive to learn, create, and solve
+        I&apos;m a guy with an insatiable drive to learn, create, and solve
         challenges using technology.
       </div>
     </div>

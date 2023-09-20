@@ -18,24 +18,28 @@ export default function CaseStudyList() {
           title="Spectral"
           caption="A messaging app designed with privacy and self hosting in mind. "
           alt="showing application on desktop and mobile"
+          link="/case-studies/spectral"
         />
         <CaseStudyItem
           image={piholePause}
           title="Pi-hole Pause"
           caption="For when you have redundant pi-holes and don't have time to troubleshoot."
           alt="showing desktop application version of pihole pause"
+          link="/case-studies/"
         />
         <CaseStudyItem
           image={genuineJesse}
           title="Genuine Jesse"
           caption="A portfolio for an incredibly talented Product Designer"
           alt="image of portfolio site"
+          link="/case-studies/"
         />
         <CaseStudyItem
           image={overdrive}
           title="Overdrive"
           caption="To keep me from breaking my car. "
           alt="Circuit diagram"
+          link="/case-studies/"
         />
       </div>
     </div>

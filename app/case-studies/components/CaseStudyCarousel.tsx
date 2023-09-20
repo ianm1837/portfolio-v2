@@ -1,21 +1,23 @@
 "use client";
-import React from "react";
-import { Suspense } from "react";
 import Image, { StaticImageData } from "next/image";
-import { useState } from "react";
-import TransparentBackdrop from "./images/Transparent Backdrop.png";
+import React, { useState } from "react";
 import ArrowBackward from "../../components/icons/ArrowBackward";
 import ArrowForward from "../../components/icons/ArrowForward";
+import TransparentBackdrop from "./images/Transparent Backdrop.png";
 
 type ImageArray = {
-  id: number,
-  image: StaticImageData,
-  caption: string
-}
+  id: number;
+  image: StaticImageData;
+  caption: string;
+};
 
-export default function CaseStudyCarousel({ showcaseImages }: { showcaseImages: ImageArray[] }) {
+export default function CaseStudyCarousel({
+  showcaseImages,
+}: {
+  showcaseImages: ImageArray[];
+}) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [loadComplete, setLoadComplete] = useState(0)
+  const [loadComplete, setLoadComplete] = useState(0);
 
   const radioElements = showcaseImages.map((radio, index) => (
     <button
@@ -30,8 +32,9 @@ export default function CaseStudyCarousel({ showcaseImages }: { showcaseImages: 
       className={`radio radio-sm flex items-center justify-center`}
     >
       <div
-        className={`h-[64%] w-[64%] rounded-full scale-0 bg-white transition-all ${currentImageIndex == index ? "scale-100" : ""
-          }`}
+        className={`h-[64%] w-[64%] scale-0 rounded-full bg-white transition-all ${
+          currentImageIndex == index ? "scale-100" : ""
+        }`}
       ></div>
     </button>
   ));
@@ -43,21 +46,24 @@ export default function CaseStudyCarousel({ showcaseImages }: { showcaseImages: 
   ));
 
   const imageElements = showcaseImages.map((image, index) => {
-
     return (
       <div
-        className={`absolute inset-0 transition-opacity ${currentImageIndex == index && loadComplete ? "" : "opacity-0"
-          } `}
+        className={`absolute inset-0 transition-opacity ${
+          currentImageIndex == index && loadComplete ? "" : "opacity-0"
+        } `}
         key={index}
       >
         <Image
           src={image.image}
-          height={800}
           alt={image.caption}
           priority={index == 0}
           placeholder="empty"
           loading={index == 0 ? undefined : "lazy"}
-          onLoadingComplete={index == showcaseImages.length - 1? () => setLoadComplete(1) : undefined}
+          onLoadingComplete={
+            index == showcaseImages.length - 1
+              ? () => setLoadComplete(1)
+              : undefined
+          }
         />
       </div>
     );
@@ -80,18 +86,24 @@ export default function CaseStudyCarousel({ showcaseImages }: { showcaseImages: 
 
   return (
     <>
-      <div>
-        <div className="relative flex w-full items-center ">
+      <div className="w-full m-auto ">
+        <div className="relative flex w-full h-full items-center">
           <div className="absolute z-10 flex h-full w-full justify-between">
-            <button className={`opacity-0 transition-opacity ${loadComplete? 'opacity-100' : ''} h-full w-6/12`}  onClick={() => incrementInt(-1)}>
+            <button
+              className={`opacity-0 transition-opacity ${
+                loadComplete ? "opacity-100" : ""
+              } h-full w-6/12`}
+              onClick={() => incrementInt(-1)}
+            >
               <span className={`btn btn-circle my-auto ml-3 mr-auto flex`}>
                 <ArrowBackward />
               </span>
             </button>
             <button
-              className={`flex h-full w-6/12 opacity-0 transition-opacity ${loadComplete? 'opacity-100' : ''}`}
+              className={`flex h-full w-6/12 opacity-0 transition-opacity ${
+                loadComplete ? "opacity-100" : ""
+              }`}
               onClick={() => incrementInt(1)}
-              
             >
               <span className={`btn btn-circle my-auto ml-auto mr-3`}>
                 <ArrowForward />
@@ -101,22 +113,26 @@ export default function CaseStudyCarousel({ showcaseImages }: { showcaseImages: 
           <div className="relative inset-0 flex h-full w-full">
             <Image
               src={TransparentBackdrop}
-              height={800}
               alt="placeholder image"
               className=""
             />
-            <div className={`absolute flex justify-center items-center w-full h-full z-50  ${loadComplete? 'hidden' : ''}`}>
-
-            <span className={` loading loading-spinner text-secondary w-20 h-20`}></span>
+            <div
+              className={`absolute z-50 flex h-full w-full items-center justify-center  ${
+                loadComplete ? "hidden" : ""
+              }`}
+            >
+              <span
+                className={` loading loading-spinner h-20 w-20 text-secondary`}
+              ></span>
             </div>
             {imageElements}
           </div>
         </div>
         {captionElements[currentImageIndex]}
-      </div>
-      <div className="mt-1"></div>
-      <div className="w-100 preview z-40 flex items-center justify-center gap-4 p-3">
-        {radioElements}
+        <div className="mt-1"></div>
+        <div className="w-100 preview z-40 flex items-center justify-center gap-4 p-3">
+          {radioElements}
+        </div>
       </div>
     </>
   );

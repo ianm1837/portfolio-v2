@@ -1,17 +1,19 @@
-import React from "react";
 import Image, { StaticImageData } from "next/image";
 import ArrowForward from "./icons/ArrowForward";
+import Link from "next/link";
 
 export default function CaseStudyItem({
   image,
   alt,
   title,
   caption,
+  link,
 }: {
   image: StaticImageData;
   alt: string;
   title: string;
   caption: string;
+  link: string;
 }) {
   return (
     <div className=" w-full lg:w-6/12 ">
@@ -23,10 +25,10 @@ export default function CaseStudyItem({
           <h2 className="text-xl font-bold">{title}</h2>
           <p>{caption}</p>
           <div className="card-actions justify-start">
-            <button className="btn btn-secondary">
+            <Link className="btn btn-secondary" href={link}>
               Read More
               <ArrowForward />
-            </button>
+            </Link>
           </div>
         </div>
       </div>

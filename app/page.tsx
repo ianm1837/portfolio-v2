@@ -1,8 +1,6 @@
 "use client";
-import Image from "next/image";
-import Nav from "./components/Nav";
-import Hero from "./components/Hero";
 import CaseStudyList from "./components/CaseStudyList";
+import Hero from "./components/Hero";
 import WaveBanner from "./components/WaveBanner";
 
 export default function Home() {

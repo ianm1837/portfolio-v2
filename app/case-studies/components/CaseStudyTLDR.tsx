@@ -2,11 +2,11 @@ import React from 'react'
 
 export default function CaseStudyTLDR({ tldr } : { tldr: string[]}) {
   return (
-    <div>
-      <h1 className='text-2xl font-bold text-warning'>TL;DR</h1>
-      <ul className='list-disc list-inside'>
+    <div className='w-4/12'>
+      <h2 className='mt-0'>TL;DR</h2>
+      <ul className=''>
       {tldr.map((tldrItem, index) => (
-          <li>{tldrItem}</li>
+          <li key={index}>{tldrItem}</li>
           ))}
       </ul>
     </div>

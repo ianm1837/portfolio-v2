@@ -7,12 +7,12 @@ type LinksArray = {
 
 export default function CaseStudyLinks({ links }: { links: LinksArray[] }) {
   return (
-    <div>
-      <h1 className="text-2xl font-bold text-success">Links: </h1>
-      <ul className="list-inside list-disc">
+    <div className="w-8/12">
+      <h2 className="">Links to Project </h2>
+      <ul>
         {links.map((linkItem, index) => (
-          <li>
-            <a href={linkItem.href}>{linkItem.title}</a>
+          <li key={index}>
+            <a href={linkItem.href} target="_blank">{linkItem.title}</a>
           </li>
         ))}
       </ul>
