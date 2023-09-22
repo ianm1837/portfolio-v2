@@ -1,5 +1,4 @@
 "use client";
-import { motion } from "framer-motion";
 import Link from "next/link";
 
 
@@ -12,23 +11,7 @@ export default function Nav() {
             Ian Meyer
           </Link>
         </div>
-        <motion.div
-          whileHover={{
-            scale: 1.1,
-          }}
-          animate={{
-            transition: {
-              duration: 0.3,
-              delay: 1,
-              repeat: 2,
-              repeatDelay: 3,
-            },
-            rotate: [0, -5, 5, 0],
-          }}
-          className="flex-none"
-        >
-          <a href="/Ian-Meyer-Resume-2023.pdf" target="_blank" className="btn btn-secondary btn-sm mx-4">resume</a>
-        </motion.div>
+          <a href="/Ian-Meyer-Resume-2023.pdf" target="_blank" className="btn normal-case btn-secondary btn-sm mx-4 transform hover:scale-110">Resume</a>
       </div>
     </div>
   );
