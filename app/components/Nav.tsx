@@ -2,7 +2,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const hoverVariant = {};
 
 export default function Nav() {
   return (
@@ -28,7 +27,7 @@ export default function Nav() {
           }}
           className="flex-none"
         >
-          <button className="btn btn-secondary btn-sm mx-4">resume</button>
+          <a href="/Ian-Meyer-Resume-2023.pdf" target="_blank" className="btn btn-secondary btn-sm mx-4">resume</a>
         </motion.div>
       </div>
     </div>
