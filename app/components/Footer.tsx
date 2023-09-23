@@ -23,12 +23,12 @@ export default function Footer() {
           href="https://github.com/ianm1837/portfolio-v2"
           target="_blank"
           className="prose flex items-center text-xs"
-        >
-          View this page on GitHub
+          >
+          View this page on GitHub 
           <Launch />
         </a>
       </div>
-      <div className="m-5">©2023 ianwmeyer.com</div>
+      <div className="m-3 text-xs">©2023 ianwmeyer.com</div>
     </div>
   );
 }

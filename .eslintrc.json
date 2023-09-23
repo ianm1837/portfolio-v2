@@ -4,6 +4,11 @@
     "prettier"
   ],
   "rules": {
-    "no-unused-vars": 1
+    "no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ]
   }
 }
