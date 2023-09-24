@@ -27,7 +27,7 @@ const descriptionText =
   "PiHole Pause emerged from the challenges of running redundant PiHoles. For those unfamiliar, a PiHole is a network-wide ad-blocking DNS server. Running a redundant PiHole isn't a typical or officially supported use case, leading to the problem of guessing which PiHole a device on the network is currently using as its DNS server. At times, I need to temporarily pause the ad-blocking service to use certain apps or software without permanently whitelisting them. PiHole Pause provides a one-stop solution for this.";
 
 const tldr = [
-  "Was tired of navigating to two different PiHole's to pause them; built a big pause button to do it for me.",
+  "Was tired of navigating to two different PiHoles to pause them; built a big pause button to do it for me.",
 ];
 
 const techUsed = [

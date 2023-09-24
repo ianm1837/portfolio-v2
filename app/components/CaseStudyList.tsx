@@ -30,7 +30,7 @@ export default function CaseStudyList() {
         <CaseStudyItem
           image={genuineJesse}
           title="Genuine Jesse"
-          caption="A portfolio for an incredibly talented Product Designer"
+          caption="A portfolio for an incredibly talented Product Designer."
           alt="image of portfolio site"
           link="/case-studies/genuinejesse"
         />
