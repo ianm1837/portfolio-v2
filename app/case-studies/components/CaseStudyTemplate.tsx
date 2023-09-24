@@ -27,13 +27,13 @@ export default function CaseStudyTemplate({
       <CaseStudyCarousel showcaseImages={showcaseImages} />
       <article className="prose max-w-none whitespace-pre-line">
         <CaseStudyHeader header={header} />
-        <div className="flex">
+        <div className="flex flex-col-reverse lg:flex-row ">
           <CaseStudyDescription description={description} />
           <CaseStudyTLDR tldr={tldr} />
         </div>
         <CaseStudyTechUsed tech={techUsed} />
         <CaseStudyLinks links={links} />
-        <div className="h-20"></div>
+        <div className=""></div>
       </article>
     </CaseStudyPageWrapper>
   );

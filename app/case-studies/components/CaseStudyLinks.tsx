@@ -7,7 +7,7 @@ export type LinksArray = {
 
 export default function CaseStudyLinks({ links }: { links: LinksArray[] }) {
   return (
-    <div className="w-8/12">
+    <div className="lg:w-8/12">
       <h2 className="">Links to Project </h2>
       <ul>
         {links.map((linkItem, index) => (
