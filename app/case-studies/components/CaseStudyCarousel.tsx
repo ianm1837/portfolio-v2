@@ -27,7 +27,6 @@ export default function CaseStudyCarousel({
       id={`radio${index}`}
       key={`radio${radio.id}`}
       onClick={(e) => {
-        console.log("onClick called");
         handleImageButtonClick(e);
       }}
       className={`radio radio-sm flex items-center justify-center`}
