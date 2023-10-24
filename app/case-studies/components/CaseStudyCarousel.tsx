@@ -40,7 +40,7 @@ export default function CaseStudyCarousel({
   ));
 
   const captionElements = showcaseImages.map((caption, index) => (
-    <div key={`caption${index}`} className={`flex justify-center bg-base-200`}>
+    <div key={`caption${index}`} className={`flex justify-center bg-base-200 rounded-b-2xl`}>
       <div className="p-3">{caption.caption}</div>
     </div>
   ));
@@ -58,6 +58,7 @@ export default function CaseStudyCarousel({
           alt={image.caption}
           priority={index == 0}
           placeholder="empty"
+          className="rounded-t-2xl"
           loading={index == 0 ? undefined : "lazy"}
           onLoadingComplete={
             index == showcaseImages.length - 1
@@ -91,7 +92,7 @@ export default function CaseStudyCarousel({
 
   return (
     <>
-      <div className="m-auto w-full ">
+      <div className="m-auto w-full">
         <div className="relative flex h-full w-full items-center">
           {imageCount ? (
             <div className="absolute z-10 flex h-full w-full justify-between">

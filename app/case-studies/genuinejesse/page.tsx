@@ -12,13 +12,13 @@ const showcaseImages = [
 const header = "Genuine Jesse";
 
 const descriptionText =
-  "Jesse, my partner, was on the lookout for the next phase in her career and needed a portfolio. As I was wrapping up my studies, I took on the challenge to craft one for her. Being a gifted and meticulous designer, Jesse produced her own design system and high-fidelity prototypes for me to follow. I opted for Next.js, eager to delve deeper into the framework. Mid-development, I recognized the constraints of Bootstrap and pivoted to Tailwind. Coincidentally, Next.js released its v13 update along with the app directory. While transitioning to these new tools, I crafted a fresh design that, though never launched (as Jesse secured a job), enriched my learning journey. For a behind-the-scenes look, explore the `tailwind-migration` branch. \n \n No additional pictures here, go check out the <a href='https://genuinejesse.com' target='_blank'>live site</a> if you would like to see more. 😉";
+  "My first client, Jesse, came to me with a request to build out a professional portfolio. As I was nearing the completion of my studies and seeking more cross-discipline working experiences, I enthusiastically accepted the challenge. Since this client was a designer, they produced their own design system and high-fidelity prototypes from which we collaborated from. \n \n To implement this project, I initially chose Next.js, driven by my desire to deepen my expertise with the framework. However, during the development process, I recognized the limitations of Bootstrap and made a strategic shift to Tailwind CSS. Coincidentally, Next.js introduced its v13 update, including the app directory, which further enriched the project. Although the new design was never launched (as the client secured a job), it proved to be a valuable learning experience. For a behind-the-scenes look, explore the `<a href='https://github.com/Meyer-and-Moon-Enterprises/moon-portfolio/tree/tailwind-migration' target='_blank'>tailwind-migration</a>` branch.";
 
 const tldr = [
-  "Partner was tired of pre-canned website builders, so I built her a custom website based on her design created in Sketch/Figma.",
+  "Client was tired of pre-canned website builders, so I built a custom website based on their designs created in Figma.",
 ];
 
-const techUsed = ["React", "Next.js"];
+const techUsed = ["React", "Next.js", "Tailwind CSS"];
 
 const links = [
   {
