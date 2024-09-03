@@ -11,7 +11,7 @@ export default function Nav() {
             Ian Meyer
           </Link>
         </div>
-          <a href="/Ian-Meyer-Resume-2023.pdf" target="_blank" className="btn normal-case btn-secondary btn-sm mx-4 transform hover:scale-110">Resume</a>
+          <a href="/Ian-Meyer-Resume.pdf" target="_blank" className="btn normal-case btn-secondary btn-sm mx-4 transform hover:scale-110">Resume</a>
       </div>
     </div>
   );
